@@ -1,0 +1,23 @@
+#
+# Arduino IDE highlighting
+#
+# N.B. use TAB, not SPACE
+#
+
+# Datatypes (KEYWORD1)
+ButtonReader	KEYWORD1
+BtnState	KEYWORD1
+
+# Methods and Functions (KEYWORD2)
+readValue	KEYWORD2
+getCurrent	KEYWORD2
+
+# Instances (KEYWORD2)
+
+# Constants (LITERAL1)
+defaultTimer	LITERAL1
+isPassive	LITERAL1
+isPressed	LITERAL1
+isActive	LITERAL1
+isReleased	LITERAL1
+

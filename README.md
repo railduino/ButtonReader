@@ -1,2 +1,2 @@
 # ButtonReader
-Reliably get button/toggle/switch input
+Reliably read Arduino button/toggle/switch input
