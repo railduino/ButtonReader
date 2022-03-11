@@ -5,7 +5,7 @@
 #include <ButtonReader.h>
 
 // Instantiate the reader
-ButtonReader btn(A6);
+ButtonReader btn(A0);
 
 // Remember the last state
 BtnState lastState;
@@ -15,7 +15,7 @@ void setup() {
   Serial.begin(9600);
   delay(1000);
 
-  // Read initial value
+  // Read the initial value
   lastState = btn.readValue();
 }
 
