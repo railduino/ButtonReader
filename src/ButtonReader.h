@@ -29,7 +29,7 @@ class ButtonReader {
     ButtonReader(int pin, unsigned long timer);
     ButtonReader(int pin);
 
-    BtnState readValue(void);
+    BtnState readState(void);
     BtnState getCurrent(void);
 
   private:

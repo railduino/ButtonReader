@@ -34,7 +34,7 @@ ButtonReader::ButtonReader(int pin): ButtonReader(pin, defaultTimer)
 }
 
 /*
- * The readValue() function returns one of four possible states:
+ * The readState() function returns one of four possible states:
  * - isPassive    - the button is idle
  * - isPressed    - the button has just been pressed
  * - isActive     - the button is held down
@@ -44,27 +44,27 @@ ButtonReader::ButtonReader(int pin): ButtonReader(pin, defaultTimer)
  * function that needs to be called during loop().
  */
 
-BtnState ButtonReader::readValue(void)
+BtnState ButtonReader::readState(void)
 {
-  int value = digitalRead(_pin);
+  int state = digitalRead(_pin);
   unsigned long now = millis();
 
   if (_startup) {
-    _prev = _last = _curr = value;
-    _state = (value == HIGH) ? isPassive : isActive;
+    _prev = _last = _curr = state;
+    _state = (state == HIGH) ? isPassive : isActive;
     _seen = now;
     _startup = false;
     return _state;
   }
 
-  if (value != _last) {
-    _last = value;
+  if (state != _last) {
+    _last = state;
     _seen = now;
   }
 
   if ((now - _seen) >= _timer) {
     _prev = _curr;
-    _curr = value;
+    _curr = state;
   }
 
   if (_prev == HIGH) {
@@ -85,8 +85,8 @@ BtnState ButtonReader::readValue(void)
 
 /*
  * The getCurrent() function returns the current input state.
- * It does not call readValue() and therefore does not update.
- * Valid only after having called readValue() at least once.
+ * It does not call readState() and therefore does not update.
+ * Valid only after having called readState() at least once.
  */
 
 BtnState ButtonReader::getCurrent(void)

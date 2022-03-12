@@ -15,15 +15,15 @@ void setup() {
   Serial.begin(9600);
   delay(1000);
 
-  // Read the initial value
-  lastState = btn.readValue();
+  // Read the initial state
+  lastState = btn.readState();
 }
 
 // the loop function runs over and over again forever
 void loop() {
-  BtnState value = btn.readValue();
+  BtnState state = btn.readState();
 
-  switch (value) {
+  switch (state) {
     case isPassive:
       if (lastState != isPassive) {
         Serial.println("Button is passive");
@@ -42,6 +42,6 @@ void loop() {
       break;
   }
 
-  lastState = value;
+  lastState = state;
 }
 
