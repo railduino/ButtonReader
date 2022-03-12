@@ -9,7 +9,7 @@ ButtonReader	KEYWORD1
 BtnState	KEYWORD1
 
 # Methods and Functions (KEYWORD2)
-readValue	KEYWORD2
+readState	KEYWORD2
 getCurrent	KEYWORD2
 
 # Instances (KEYWORD2)
